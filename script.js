@@ -40,3 +40,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         renderEvents();
     };
+
+    function addEvent() {
+        const title = document.getElementById("event_title").value.trim();
+        const date = document.getElementById("event_date").value;
+        const category = document.getElementById("category").value;
+        const description = document.getElementById("description").value.trim();
+
+        if (!title || !date) {
+            alert("Please fill Event Title and Date!");
+            return;
+        }
+
+        events.push({ title, date, category, description });
+
+        renderEvents();
+        form.reset();
+    }
