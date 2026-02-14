@@ -57,3 +57,15 @@ document.addEventListener("DOMContentLoaded", function () {
         renderEvents();
         form.reset();
     }
+
+    function renderEvents() {
+        eventList.innerHTML = "";
+
+        if (events.length === 0) {
+            eventList.innerHTML = `
+                <p class="no-event-msg">
+                    No events registered yet. Add your first event!
+                </p>
+            `;
+            return;
+        }
