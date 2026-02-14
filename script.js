@@ -69,3 +69,20 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             return;
         }
+
+        events.forEach((event) => {
+            const div = document.createElement("div");
+            div.className = "event-item";
+
+            div.innerHTML = `
+                <strong>${event.title}</strong><br>
+                <small>Date: ${event.date}</small><br>
+                <small>Category: ${event.category}</small><br>
+                <p>${event.description}</p>
+            `;
+
+            eventList.appendChild(div);
+        });
+    }
+
+});
